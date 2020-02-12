@@ -1,0 +1,65 @@
+.nav-wrap {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  animation: nav 0.2s ease-in-out forwards;
+  padding: 30px 60px 0;
+  z-index: 2;
+
+  &.is-index {
+    pointer-events: none;
+  }
+
+  a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 38px;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+    margin-right: 20px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin: 0 1em;
+    }
+
+    &.logo {
+      &.is-white {
+        pointer-events: none;
+
+        path {
+          fill: #fff;
+        }
+      }
+
+      svg {
+        position: relative;
+        display: block;
+        width: 344.19px;
+      }
+
+      path {
+        transition: fill .4s linear;
+      }
+    }
+
+    &.active:not(.logo) .underline {
+      width: 100%;
+    }
+  }
+}
+
+.nav-inner {
+  transition: opacity .4s linear;
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

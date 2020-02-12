@@ -1,0 +1,179 @@
+.view {
+  position: relative;
+  display: block;
+}
+
+.content {
+  position: relative;
+  display: block;
+  padding: 305px 60px 78px;
+
+  &--inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(10px, 1fr));
+    grid-column-gap: 60px;
+  }
+
+  &--inner.is-narrow {
+    display: flex;
+    /* grid-template-columns: repeat(3, minmax(10px, 1fr));
+    grid-column-gap: 60px; */
+  }
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -60px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 60px; /* gutter size */
+  background-clip: padding-box;
+}
+
+.about-img {
+  position: relative;
+  display: block;
+  grid-column: span 3;
+
+  &-wrapper {
+    position: relative;
+    background: #f1f1f1;
+    padding-top: 67%;
+  }
+
+  img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 0;
+    opacity: 0;
+    transition: opacity .4s linear;
+  }
+}
+
+.about-text {
+  position: relative;
+  display: block;
+  grid-column: span 3;
+
+  p {
+    margin: 0;
+    font-size: 38px;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    padding-bottom: 48px;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+
+    &:active,
+    &:focus,
+    &:visited {
+      color: #000;
+      text-decoration: underline;
+    }
+  }
+}
+
+.contact-text {
+  position: relative;
+  display: block;
+  grid-column: span 2;
+
+  p {
+    margin: 0;
+    font-size: 38px;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    padding-bottom: 48px;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+
+    &:active,
+    &:focus,
+    &:visited {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+}
+
+.contact-img {
+  position: relative;
+  display: block;
+  grid-column: span 4;
+
+  &-wrapper {
+    position: relative;
+    background: #f1f1f1;
+    padding-top: 67%;
+  }
+
+  img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .4s linear;
+  }
+}
+
+.project {
+  &-wrap {
+    position: relative;
+    display: block;
+    padding-bottom: 120px;
+  }
+
+  &-img-wrap {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+    background: #f1f1f1;
+    transition: background .4s linear;
+
+    img {
+      position: absolute;
+      display: block;
+      width: 100%;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: opacity .4s linear;
+    }
+  }
+
+  &-desc {
+    position: relative;
+    padding-top: 10px;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 38px;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+    color: #000000;
+  }
+}

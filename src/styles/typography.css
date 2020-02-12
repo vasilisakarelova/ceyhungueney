@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Lyon Italic';
+    src: url('./fonts/LyonText-RegularItalic.woff') format('woff'),
+        url('./fonts/LyonText-RegularItalic.woff2') format('woff2'),
+        url('./fonts/LyonText-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+i {
+  font-family: 'Lyon Italic';
+}

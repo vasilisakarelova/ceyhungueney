@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Transition, TransitionGroup } from 'react-transition-group';
+import { play, exit } from './timelines'
+import Nav from './Nav'
+import Home from './views/Home'
+import About from './views/About'
+import Contact from './views/Contact'
+import Work from './views/Work'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    const { about, contact, projects, tags } = this.props.data
+
+    return (
+      <BrowserRouter>
+        <div className="app">
+          <Route render={({ location }) => {
+            const { pathname, key } = location;
+
+            return (
+              <>
+                <Nav location={pathname}/>
+                <TransitionGroup component={null}>
+                  <Transition
+                    key={key}
+                    appear={true}
+                    onEnter={(node, appears) => play(pathname, node, appears)}
+                    onExit={(node, appears) => exit(node, appears)}
+                    timeout={{enter: 550, exit: 350}}
+                    >
+                    <Switch location={location}>
+                      <Route exact path="/" component={Home}/>
+                      <Route path="/contact" render={() => <Contact data={contact} />} />
+                      <Route path="/about" render={() => <About data={about} />} />
+                      <Route path="/work" render={() => <Work data={projects} tags={tags} />} />
+                    </Switch>
+                  </Transition>
+                </TransitionGroup>
+              </>
+            )
+          }}/>
+        </div>
+      </BrowserRouter>
+    )
+  }
 }
 
-export default App;
+  export default App;

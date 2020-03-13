@@ -4,21 +4,21 @@ import './index.css'
 import App from './App'
 import { unregister } from './serviceWorker'
 
-import api from './testdb'
-//
-// const origin = window.location.origin
-//
-// window.fetch(`${origin}/admin/api`)
-//   .then((response) => {
-//     if (response.status >= 400) {
-//       throw new Error("Bad response from server")
-//     }
-//     return response.json()
-//   })
-//   .then((data) => {
-//     ReactDOM.render(<App data={data} />, document.getElementById('root'))
-//     unregister()
-//   })
+// import api from './testdb'
 
-ReactDOM.render(<App data={api} />, document.getElementById('root'))
-unregister()
+const origin = window.location.origin
+
+window.fetch(`${origin}/dev/yournewwebsite/admin/api`)
+  .then((response) => {
+    if (response.status >= 400) {
+      throw new Error("Bad response from server")
+    }
+    return response.json()
+  })
+  .then((data) => {
+    ReactDOM.render(<App data={data} />, document.getElementById('root'))
+    unregister()
+  })
+
+// ReactDOM.render(<App data={api} />, document.getElementById('root'))
+// unregister()

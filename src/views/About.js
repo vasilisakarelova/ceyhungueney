@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import setAspectRatio from '../helpers/setAspectRatio'
 
-import ceyhun from '../assets/about.png'
-
 class About extends Component {
   render() {
     const { intro, photo } = this.props.data

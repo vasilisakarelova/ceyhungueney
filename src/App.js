@@ -13,7 +13,7 @@ class App extends Component {
     const { about, contact, projects, tags } = this.props.data
 
     return (
-      <BrowserRouter>
+      <BrowserRouter basename='/dev/yournewwebsite'>
         <div className="app">
           <Route render={({ location }) => {
             const { pathname, key } = location;

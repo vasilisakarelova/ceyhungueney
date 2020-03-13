@@ -8,7 +8,7 @@ function Project({ data }) {
       <div className='project-img-wrap'>
         <img alt='case preview' src={preview} onLoad={(ev) => setAspectRatio(ev.currentTarget)}/>
       </div>
-      <div className='project-desc'>{desc}</div>
+      <div className='project-desc' dangerouslySetInnerHTML={{ __html: desc }}></div>
     </div>
   )
 }

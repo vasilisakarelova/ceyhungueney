@@ -16,9 +16,9 @@
     color: #000;
     text-decoration: none;
     text-transform: capitalize;
-    font-size: 38px;
-    line-height: 48px;
-    letter-spacing: -0.02em;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.0em;
     margin-right: 20px;
 
     &:last-of-type {
@@ -38,10 +38,14 @@
         }
       }
 
+      &.is-disabled {
+        pointer-events: none;
+      }
+
       svg {
         position: relative;
         display: block;
-        width: 344.19px;
+        width: 250px;
       }
 
       path {
